@@ -68,7 +68,7 @@ def retrieve_and_display_logs_from_file(fp):
                 print("\n%s" % log_info)
                 continue
 
-            if ('Transfer stats:' and 'TYPE') in log_info:
+            if 'Transfer stats:' in log_info:
                 test_end = re.search("DATE=([0-9]{14}\.[0-9]{6})", log_info).group(1)
                 test_start = re.search("START=([0-9]{14}\.[0-9]{6})", log_info).group(1)
                 file_size = float(re.search("NBYTES=([0-9]+) ", log_info).group(1))
