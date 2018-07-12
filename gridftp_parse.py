@@ -3,6 +3,8 @@ import re
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
+
 
 def gridftp_datetime_conversion(*gridftp_datetime):
     """
@@ -169,8 +171,8 @@ def graph_variables(data_frame, graph_entities):
 
 
 if __name__ == '__main__':
-
-    log = retrieve_and_display_logs_from_file('globus.log')
+    log_path = sys.argv[1]
+    log = retrieve_and_display_logs_from_file(log_path)
 
     df = pd.DataFrame(log)
 
